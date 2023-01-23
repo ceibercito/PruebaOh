@@ -57,11 +57,11 @@ namespace PruebaOh.Controllers
         [HttpGet("{id}")]
         public ActionResult<Empleado> Get(string id)
         {
-            var parametro = Int32.Parse(id);
+            var parametro = Int64.Parse(id);
             var existing = _dbEmpleadoDbContext.Empleados.FirstOrDefault(x => x.Id == parametro);
             if (existing == null)
             {
-                if (id.Length != 8)
+                if (id.Length > 8)
                     return NotFound("El numero de documento debe ser de 8 digitos");
                 existing = _dbEmpleadoDbContext.Empleados.FirstOrDefault(x => x.Document_number == id);
                 if (existing == null)

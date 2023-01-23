@@ -6,7 +6,7 @@
 
          public string Name { get; set; }
 
-        public string ?Document_number { get; set; }
+        public string Document_number { get; set; }
 
         public double Salary { get; set; }
 
